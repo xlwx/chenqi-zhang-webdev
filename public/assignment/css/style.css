@@ -5,3 +5,30 @@ input.form-control {
 body {
     padding-top: 36px;
 }
+
+.website-main {
+	margin-top: 40px;
+}
+
+li.borderless {
+	border: 0 none;
+}
+
+@media screen and (orientation: landscape) {
+	.container {
+		padding: 0;
+		margin: auto;
+	}
+	.col-xs-4 {
+		border-right: solid;
+	}
+}
+@media screen and (orientation: portrait) {
+    
+    .col-xs-4 {
+        display: none;
+    }
+    .col-xs-8 {
+    	width: 100%;
+    }
+}
