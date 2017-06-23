@@ -1,0 +1,64 @@
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <p class="navbar-text pull-left">
+                    <a href="#!/user/{{model.userId}}" class="navbar-link">
+                        <span class="glyphicon glyphicon-chevron-left">
+                        </span>
+                    </a>
+                </p>
+                <a class="navbar-brand" href="#">
+                    Websites
+                </a>
+                <p class="navbar-text pull-right">
+                    <a href="#!/user/{{model.userId}}/website/new" class="navbar-link">
+                        <span class="glyphicon glyphicon-plus">
+                        </span>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- <div class="website-main">
+        <ul class="list-group">
+          <li class="list-group-item justify-content-between borderless">
+            <a href="#!/user/:uid/website/:wid/page">Address Book App</a>
+            <a href="#!/user/:uid/website/:wid"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+          </li>
+          <li class="list-group-item justify-content-between borderless">
+            <a href="#!/user/:uid/website/:wid/page">Blogger</a>  
+            <a href="#!/user/:uid/website/:wid"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+          </li>
+          <li class="list-group-item justify-content-between borderless">
+            <a href="#!/user/:uid/website/:wid/page">Blogging App</a>
+            <a href="#!/user/:uid/website/:wid"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+          </li>
+          <li class="list-group-item justify-content-between borderless">
+            <a href="#!/user/:uid/website/:wid/page">Script Testing App</a>
+            <a href="#!/user/:uid/website/:wid"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+          </li>
+        </ul>
+    </div> -->
+
+    <div class="website-main">
+        <ul class="list-group">
+          <li class="list-group-item justify-content-between borderless" ng-repeat="website in model.websites">
+            <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">{{website.name}}</a>
+            <a href="#!/user/{{model.userId}}/website/{{website._id}}"><span class="glyphicon glyphicon-cog pull-right"></span></a>
+          </li>
+        </ul>
+    </div>
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-text pull-right">
+                <a href="#!/user/{{model.userId}}">
+                    <span class="glyphicon glyphicon-user"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+

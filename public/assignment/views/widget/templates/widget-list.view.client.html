@@ -1,0 +1,48 @@
+ 
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <p class="navbar-text pull-left">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link">
+                    <span class="glyphicon glyphicon-chevron-left">
+                    </span>
+                </a>
+            </p>
+            <a class="navbar-brand" href="#">
+                Widgets
+            </a>
+            <p class="navbar-text pull-right">
+                <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new" class="navbar-link">
+                    <span class="glyphicon glyphicon-plus">
+                    </span>
+                </a>
+            </p>
+        </div>
+    </div>
+</nav>
+
+<div class="website-main">
+    <div ng-repeat="widget in model.widgets">
+        <div ng-switch="widget.widgetType">
+            <div ng-switch-when="HEADING">
+                <ng-include src="'widget-heading.view.client.html'">
+            </div>
+            <div ng-switch-when="IMAGE">
+                <ng-include src="'widget-image.view.client.html'">
+            </div>
+            <div ng-switch-when="YOUTUBE">
+                <ng-include src="'widget-youtube.view.client.html'">
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+        <div class="navbar-text pull-right">
+            <a href="#!/user/{{model.userId}}">
+                <span class="glyphicon glyphicon-user"></span>
+            </a>
+        </div>
+    </div>
+</nav>

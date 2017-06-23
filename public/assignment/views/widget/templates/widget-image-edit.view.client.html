@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Widget Edit</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="css/style.css" rel="stylesheet"/>
-</head>
-<body>
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <p class="navbar-text pull-left">
-                    <a href="widget-list.html" class="navbar-link">
+                    <a href="#!/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
                         <span class="glyphicon glyphicon-chevron-left">
                         </span>
                     </a>
@@ -21,7 +12,7 @@
                     Widget Edit
                 </a>
                 <p class="navbar-text pull-right">
-                    <a href="widget-list.html" class="navbar-link">
+                    <a href="#!/user/:uid/website/:wid/page/:pid/widget" class="navbar-link">
                         <span class="glyphicon glyphicon-ok">
                         </span>
                     </a>
@@ -40,23 +31,31 @@
             <input tyep="text" class="form-control" id="widgettext"></textarea>
         </div>
         <div class="form-group">
-            <label for="widgetsize">Size</label>
-            <input tyep="text" class="form-control" id="widgetsize"></textarea>
+            <label for="widgeturl">URL</label>
+            <input tyep="text" class="form-control" id="widgeturl"></textarea>
         </div>
         <div class="form-group">
-             <a class="btn btn-danger  btn-block" href="widget-list.html">Delete</a>
+            <label for="widgetwidth">Width</label>
+            <input tyep="text" class="form-control" id="widgetwidth"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="widgetupload">Upload</label>
+            <input type="file" class="form-control" id="widgetupload"></textarea>
+        </div>
+        <div class="form-group">
+             <a class="btn btn-primary  btn-block" href="#">Upload Image</a>
+        </div> 
+        <div class="form-group">
+             <a class="btn btn-danger  btn-block" href="#!/user/:uid/website/:wid/page/:pid/widget">Delete</a>
         </div>      
     </div>
     
     <nav class="navbar navbar-default navbar-fixed-bottom">
         <div class="container">
             <div class="navbar-text pull-right">
-                <a href="#">
+                <a href="#!/user/:uid">
                     <span class="glyphicon glyphicon-user"></span>
                 </a>
             </div>
         </div>
     </nav>
-
-</body>
-</html>
