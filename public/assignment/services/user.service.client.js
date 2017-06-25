@@ -2,7 +2,7 @@
 	angular.module("WebAppMaker")
 	.factory("UserService", UserService);
 
-	function UserService() {
+	function UserService($http) {
 		var users = [
 			{_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
 			{_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
@@ -21,17 +21,26 @@
 
 		return api;
 
-		function creatUser(user) {
-			users.push(user);
+		function creatUser(user, callback) {
+			$http
+				.post("/api/user", user)
+				.then(function(user){
+					callback(user);
+				});
+			// users.push(user);
 		}
 
 		function findUserById(userId) {
+			// $http
+			// 	.get("/api/user/" + userId)
+			// 	.then(function(respond) {
+			// 		return respond.data;
+			// 	});
 			for(var i = 0; i < users.length; i++) {
-				if(userId === users[i]._id) {
+			if(userId === users[i]._id) {
 					return users[i];
 				}
 			}
-			return null;
 		}
 
 		function findUserByUserName(username) {

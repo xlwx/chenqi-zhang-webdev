@@ -1,6 +1,5 @@
 
-    <div class="container">
-        <h1>Register</h1>
+    <div class="container-fluid">
         <input type="text"
                class="form-control"
                placeholder="username" ng-model="model.user.username"/>
@@ -11,7 +10,7 @@
                class="form-control"
                placeholder="verify password" ng-model="model.user.vpassword"/>
         <a class="btn btn-primary btn-block"
-           href="#!/user/:uid">Register</a>
+           ng-click="model.register(model.user)">Register</a>
         <a class="btn btn-danger  btn-block"
            href="#!/login">Cancel</a>
     </div>

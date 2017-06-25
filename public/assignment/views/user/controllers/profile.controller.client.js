@@ -9,7 +9,11 @@
         vm.goToWebsite = goToWebsite;
 
     	function init() {
-    		vm.user = UserService.findUserById(vm.userId);
+    		// UserService.findUserById(vm.userId)
+      //                  .then(function(data) {
+      //           vm.user = data;
+      //        });
+            vm.user = UserService.findUserById(vm.userId);
     	}
 
     	init();

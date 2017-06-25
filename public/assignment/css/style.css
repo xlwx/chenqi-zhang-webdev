@@ -6,12 +6,17 @@ body {
     padding-top: 36px;
 }
 
-.website-main {
-	margin-top: 40px;
+body {
+	margin-top: 30px;
+	margin-bottom: 70px;
 }
 
 li.borderless {
 	border: 0 none;
+}
+
+.navbar-default {
+	background-color: lightblue;
 }
 
 @media screen and (orientation: landscape) {
