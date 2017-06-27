@@ -3,15 +3,15 @@
 	.factory("UserService", UserService);
 
 	function UserService($http) {
-		var users = [
-			{_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
-			{_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
-			{_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
-			{_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
-		];
+		// var users = [
+		// 	{_id: "123", username: "alice",    password: "alice",    firstName: "Alice",  lastName: "Wonder"  },
+		// 	{_id: "234", username: "bob",      password: "bob",      firstName: "Bob",    lastName: "Marley"  },
+		// 	{_id: "345", username: "charly",   password: "charly",   firstName: "Charly", lastName: "Garcia"  },
+		// 	{_id: "456", username: "jannunzi", password: "jannunzi", firstName: "Jose",   lastName: "Annunzi" }
+		// ];
 
 		var api = {
-			"creatUser": creatUser,
+			"createUser": createUser,
 			"findUserById": findUserById,
 			"findUserByUserName": findUserByUserName,
 			"findUserByCredentials": findUserByCredentials,
@@ -21,26 +21,20 @@
 
 		return api;
 
-		function creatUser(user, callback) {
-			$http
-				.post("/api/user", user)
-				.then(function(user){
-					callback(user);
-				});
-			// users.push(user);
+		function createUser(user) {
+			var url = "/api/assignment/user";
+			return $http.post(url, user)
+						.then(function(respond){
+							return respond.data;
+						});
 		}
 
 		function findUserById(userId) {
-			// $http
-			// 	.get("/api/user/" + userId)
-			// 	.then(function(respond) {
-			// 		return respond.data;
-			// 	});
-			for(var i = 0; i < users.length; i++) {
-			if(userId === users[i]._id) {
-					return users[i];
-				}
-			}
+			var url = "/api/assignment/user/" + userId;
+			return $http.get(url)
+						.then(function(respond) {
+							return respond.data;
+						});
 		}
 
 		function findUserByUserName(username) {
@@ -53,28 +47,24 @@
 		}
 
 		function findUserByCredentials(username, password) {
-			for(var i = 0; i < users.length; i++) {
-				if(username === users[i].username && password === users[i].password) {
-					return users[i];
-				}
-			}
-			return null;
+			var url = "/api/assignment/user?username=" + username + "&password=" + password;
+			return $http.get(url)
+						.then(function(respond) {
+							return respond.data;
+						});
 		}
 
 		function updateUser(userId, user) {
-			for(var i = 0; i < users.length; i++) {
-				if(userId === users[i]._id) {
-					users[i] = user;
-				}
-			}
+			var url = "/api/assignment/user/" + userId;
+			return $http.put(url, user)
+						.then(function(respond) {
+							return respond.data;
+						});
 		}
 
 		function deleteUser(userId) {
-			for(var i = 0; i < users.length; i++) {
-				if(userId === users[i]._id) {
-					users.splice(i, 1);
-				}
-			}
+			var url = "/api/assignment/user/" + userId;
+			return $http.delete(url);
 		}
 
 	}

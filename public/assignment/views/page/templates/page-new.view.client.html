@@ -12,7 +12,8 @@
                     New Page
                 </a>
                 <p class="navbar-text pull-right">
-                    <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page" class="navbar-link" ng-click="model.addPage()">
+                    <a class="navbar-link" 
+                    ng-click="model.createPage(model.websiteId, model.page)">
                         <span class="glyphicon glyphicon-ok">
                         </span>
                     </a>

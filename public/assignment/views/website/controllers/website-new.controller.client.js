@@ -3,21 +3,24 @@
         .module("WebAppMaker")
         .controller("NewWebsiteController", NewWebsiteController);
        
-    function NewWebsiteController($routeParams, WebsiteService) { 
+    function NewWebsiteController($routeParams, WebsiteService, $location) { 
     	var vm = this;
         vm.userId = $routeParams["uid"];
-        vm.addWebsite = addWebsite;
+        vm.createWebsite = createWebsite;
         vm.website = {};
 
-        function init() {
-        	 vm.websites = WebsiteService.findWebsitesByUser(vm.userId);
-        }
+        WebsiteService
+            .findWebsitesByUser(vm.userId)
+            .then(function(data) {
+                vm.websites = data;
+            });
 
-        init();
-
-        function addWebsite() {
-        	// need a _id for the new website
-        	WebsiteService.createWebsite(vm.userId,vm.website);
+        function createWebsite(userId, website) {
+        	WebsiteService
+            .createWebsite(userId, website)
+            .then(function() {
+                $location.url("/user/" + vm.userId + "/website");
+            });
         }
     }
     

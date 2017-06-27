@@ -7,12 +7,20 @@
     	var vm = this;
     	vm.login = login;
     	function login(user) {
-    		vm.user = UserService.findUserByCredentials(user.username, user.password);
-    		if(vm.user) {
-    			$location.url("/user/" + vm.user._id);
-    		} else {
-    			vm.alert = "Unable to login";
-    		}
+    		UserService
+                .findUserByCredentials(user.username, user.password)
+                .then(login, handleError);
+
+            function login(user){
+                if(user) {
+                    $location.url("/user/" + user._id);
+                }
+            }
+
+            function handleError(error) {
+                vm.alert = "Unable to login";
+            }
+    		
     	}
     }
     
