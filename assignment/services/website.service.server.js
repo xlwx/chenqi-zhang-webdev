@@ -6,7 +6,21 @@ module.exports = function(app) {
 		{ "_id": "890", "name": "Go",          "developerId": "123", "description": "Lorem" },
 		{ "_id": "567", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
 		{ "_id": "678", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
-		{ "_id": "789", "name": "Chess",       "developerId": "234", "description": "Lorem" }
+		{ "_id": "789", "name": "Chess",       "developerId": "123", "description": "Lorem" },
+		{ "_id": "1234", "name": "Facebook",    "developerId": "123", "description": "Lorem" },
+		{ "_id": "2344", "name": "Tweeter",     "developerId": "123", "description": "Lorem" },
+		{ "_id": "4564", "name": "Gizmodo",     "developerId": "123", "description": "Lorem" },
+		{ "_id": "8904", "name": "Go",          "developerId": "123", "description": "Lorem" },
+		{ "_id": "5674", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
+		{ "_id": "6784", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
+		{ "_id": "7894", "name": "Chess",       "developerId": "123", "description": "Lorem" },
+		{ "_id": "1235", "name": "Facebook",    "developerId": "1 23", "description": "Lorem" },
+		{ "_id": "2345", "name": "Tweeter",     "developerId": "123", "description": "Lorem" },
+		{ "_id": "4565", "name": "Gizmodo",     "developerId": "123", "description": "Lorem" },
+		{ "_id": "8905", "name": "Go",          "developerId": "123", "description": "Lorem" },
+		{ "_id": "5675", "name": "Tic Tac Toe", "developerId": "123", "description": "Lorem" },
+		{ "_id": "6785", "name": "Checkers",    "developerId": "123", "description": "Lorem" },
+		{ "_id": "7895", "name": "Chess",       "developerId": "123", "description": "Lorem" }
 	];
 
 	app.post("/api/assignment/website/:userId/website", createWebsite);

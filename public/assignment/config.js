@@ -68,6 +68,9 @@
 			templateUrl: "views/widget/templates/widget-edit.view.client.html",
 			controller: "EditWidgetController",
 			controllerAs: "model"
+		})
+		.when("/widget/:widgetId", {
+			templateUrl: "views/widget/templates/widget-image-edit.view.client.html"
 		});
 	}
 })();

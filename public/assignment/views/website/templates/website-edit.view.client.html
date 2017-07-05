@@ -25,7 +25,7 @@
             {{model.message}}
         </div>
         <div class="row">
-            <div class="col-xs-4">
+            <div class="col-sm-4 hidden-xs website-sideList">
                 <ul class="list-group">
                   <li class="list-group-item justify-content-between borderless" ng-repeat="website in model.websites">
                     <a href="#!/user/{{model.userId}}/website/{{website._id}}/page">{{website.name}}</a>
@@ -34,14 +34,15 @@
                 </ul>
             </div>
 
-            <div class="col-xs-8">
+            <div class="col-sm-8 col-xs-12 website-edit">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Name" ng-model="model.website.name">
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea class="form-control" id="description" placeholder="Description" ng-model="model.website.description"></textarea>
+                    <textarea class="form-control" id="description" placeholder="Description" 
+                    rows="5" ng-model="model.website.description"></textarea>
                 </div>
                 <div class="form-group">
                     <a class="btn btn-success  btn-block" 
@@ -55,13 +56,5 @@
         </div>         
     </div>
     
-    <nav class="navbar navbar-default navbar-fixed-bottom">
-        <div class="container">
-            <div class="navbar-text pull-right">
-                <a href="#!/user/{{model.userId}}">
-                    <span class="glyphicon glyphicon-user"></span>
-                </a>
-            </div>
-        </div>
-    </nav>
+    <div ng-include="'views/common/footer.view.client.html'"></div>
 
