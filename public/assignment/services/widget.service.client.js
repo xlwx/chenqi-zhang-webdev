@@ -28,12 +28,11 @@
 		}
 
 		function findWidgetById(widgetId) {
-			for(var i = 0; i < widgets.length; i++) {
-				if(widgetId === widgets[i]._id) {
-					return widgets[i];
-				}
-			}
-			return null;
+			var url = "/api/assignment/widget/" + widgetId;
+			return $http.get(url)
+						.then(function(respond) {
+							return respond.data;
+						});
 		}
 
 		function updateWidget(widgetId, widget) {

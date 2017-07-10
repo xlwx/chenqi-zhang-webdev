@@ -31,7 +31,13 @@ module.exports = function(app) {
     	res.json(target_widgets);
     }
 
-    function findWidgetById(){}
+    function findWidgetById(req, res) {
+        var widgetId = req.params["widgetId"];
+        var widget = widgets.find(function(w) {
+            return w._id === widgetId;
+        });
+        res.json(widget);
+    }
 
     function updateWidget(){}
 
@@ -48,9 +54,9 @@ module.exports = function(app) {
         var width         = req.body.width;
         var myFile        = req.file;
  
-        var userId = req.body.userId;
-        var websiteId = req.body.websiteId;
-        var pageId = req.body.pageId;
+        // var userId = req.body.userId;
+        // var websiteId = req.body.websiteId;
+        // var pageId = req.body.pageId;
  
         var originalname  = myFile.originalname; // file name on user's computer
         var filename      = myFile.filename;     // new file name in upload folder
@@ -59,10 +65,11 @@ module.exports = function(app) {
         var size          = myFile.size;
         var mimetype      = myFile.mimetype;
  
-        widget = getWidgetById(widgetId);
+        // widget = getWidgetById(widgetId);
+        var widget = {};
         widget.url = '/uploads/'+filename;
  
-        // var callbackUrl   = "/assignment/#/user/"+userId+"/website/"+websiteId+...;
+        var callbackUrl   = "/#!/user/123/website/890/page/321/widget/345";
  
         // res.redirect(callbackUrl);
     }
