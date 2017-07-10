@@ -21,9 +21,9 @@
     </div>
 </nav>
 
-    <div class="container-fluid">
+    <ul class="container-fluid" wd-draggable>
         
-        <div ng-repeat="widget in model.widgets" class="wd-widget">
+        <li ng-repeat="widget in model.widgets" class="wd-widget">
             <div class="wd-toolbar">
                 <a href="#!/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
@@ -49,8 +49,8 @@
                      ng-bind-html="model.trustThisContent(widget.text)">
 
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
 
     </div>    
 

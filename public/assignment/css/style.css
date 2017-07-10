@@ -15,6 +15,10 @@ li.borderless {
 	border: 0 none;
 }
 
+li {
+	list-style-type: none;
+}
+
 .navbar-default {
 	background-color: lightblue;
 }

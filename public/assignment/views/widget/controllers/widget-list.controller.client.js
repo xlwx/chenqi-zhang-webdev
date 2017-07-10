@@ -2,6 +2,17 @@
     angular
         .module("WebAppMaker")
         .controller("WidgetListController", WidgetListController)
+        .directive("wdDraggable", wdDraggable);
+
+    function wdDraggable() {
+        function linkFunction(scope, element) {
+            $(element).sortable();
+        }
+
+        return {
+            link: linkFunction
+        }
+    }
        
     function WidgetListController($routeParams, WidgetService, $sce) { 
 
